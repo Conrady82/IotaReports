@@ -95,12 +95,16 @@ To spin up the Docker containers, run the following command:
 This command will build and start the following services:
 
 - MySQL database
+    running on http://localhost:3306/
 
 - MinIO storage service
+    running on http://localhost:9000/
 
 - Vue.js frontend
+    running on http://localhost:5173/
 
 - Node.js backend
+    running on http://localhost:3000/
 
 Once the Docker containers have been built, you can run them without rebuilding by using the following command:
 
