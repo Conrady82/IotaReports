@@ -1,0 +1,94 @@
+# Instructions for Accessing MySQL and MinIO Containers
+
+## MySQL
+
+### Accessing the MySQL Container
+
+To connect to the MySQL database container, follow these steps:
+
+1. **Open a terminal** on your host machine.
+2. **Run the following command** to access the MySQL container:
+
+   ```bash
+   docker exec -it iota_mysql mysql -u iota_user -p
+
+**Enter the password** when prompted. The default password is:
+
+password
+
+### Using MySQL
+
+Once connected, you can use standard MySQL commands to interact with the database.
+
+**Example: Creating a new table**
+
+`   CREATE TABLE test_table (      id INT AUTO_INCREMENT PRIMARY KEY,      name VARCHAR(255) NOT NULL  );   `
+
+**Example: Querying the database**
+
+`   SELECT * FROM test_table;   `
+
+MinIO
+-----
+
+### Accessing the MinIO Web Interface
+
+To access the MinIO web interface:
+
+1.  **Open your web browser**.
+    
+2.  http://localhost:9090
+    
+3.  **Log in using the default credentials**:
+    
+    *   **Username**: **minioadmin**
+        
+    *   **Password**: **minioadmin**
+        
+
+### Using MinIO
+
+Once logged in, you can use the web interface to manage buckets and objects.
+
+**Example: Creating a bucket**
+
+1.  Click on the **+** icon or **Create Bucket** button.
+    
+2.  Enter a name for your bucket (e.g., **test-bucket**).
+    
+3.  Click **Create**.
+    
+
+**Example: Uploading a file**
+
+1.  Click on the bucket you created.
+    
+2.  Click the **Upload** button.
+    
+3.  Select the file you want to upload from your computer.
+    
+
+### Testing the File Upload Endpoint with Postman
+
+1.  **Open Postman**.
+    
+2.  **Create a new request** with method **POST**.
+    
+3.  bashCopy codehttp://localhost:3000/api/reports/upload
+    
+4.  **Configure the Body**:
+    
+    *   Select **form-data**.
+        
+    *   Add a key named **file** with type set to **File**.
+        
+    *   Choose a file from your computer to upload.
+        
+5.  **Send the Request** by clicking **Send**.
+    
+
+### Stopping and Removing Containers
+
+To stop and remove the Docker containers, use the following command:
+
+`   docker-compose down   `
