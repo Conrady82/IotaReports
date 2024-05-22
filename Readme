@@ -86,7 +86,25 @@ Once logged in, you can use the web interface to manage buckets and objects.
         
 5.  **Send the Request** by clicking **Send**.
     
+### Building and Running the Containers
 
+To spin up the Docker containers, run the following command:
+
+`docker-compose up --build`
+
+This command will build and start the following services:
+
+- MySQL database
+
+- MinIO storage service
+
+- Vue.js frontend
+
+- Node.js backend
+
+Once the Docker containers have been built, you can run them without rebuilding by using the following command:
+
+`docker-compose up`
 ### Stopping and Removing Containers
 
 To stop and remove the Docker containers, use the following command:
