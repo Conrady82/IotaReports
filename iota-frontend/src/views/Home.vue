@@ -1,22 +1,22 @@
 <template>
-    <h1>HELLO HOME VIEW</h1>
-    <!-- <div class="home-container">
+    <h1>HOME VIEW</h1>
+    <div class="home-container">
       <h2>Welcome, {{ user.name }}</h2>
       <div v-if="user.role === 'observer' || user.role === 'both'">
         <h3>Observer Functions</h3>
         <ul>
-          <li><router-link to="/upload-report">Upload Report</router-link></li>
-          <li><router-link to="/view-events">View Events</router-link></li>
+          <li><RouterLink to="/upload-report">Upload Report</RouterLink></li>
+          <li><RouterLink to="/view-events">View Events</RouterLink></li>
         </ul>
       </div>
       <div v-if="user.role === 'reviewer' || user.role === 'both'">
         <h3>Reviewer Functions</h3>
         <ul>
-          <li><router-link to="/review-reports">Review Reports</router-link></li>
-          <li><router-link to="/manage-events">Manage Events</router-link></li>
+          <li><RouterLink to="/review-reports">Review Reports</RouterLink></li>
+          <li><RouterLink to="/manage-events">Manage Events</RouterLink></li>
         </ul>
       </div>
-    </div> -->
+    </div>
   </template>
   
   <script>
