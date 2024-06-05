@@ -1,13 +1,30 @@
-<script setup>
-import { RouterLink, RouterView } from 'vue-router'
-</script>
-
 <template>
   <div id="app">
-    <RouterView />
+    <Navbar v-if="authStore.isAuthenticated" />
+    <router-view />
   </div>
 </template>
 
-<style scoped>
+<script>
+import { useAuthStore } from './stores/auth';
+import Navbar from './components/Navbar.vue';
 
+export default {
+  components: {
+    Navbar
+  },
+  setup() {
+    const authStore = useAuthStore();
+    return {
+      authStore
+    };
+  }
+};
+</script>
+
+<style scoped>
+#app {
+  text-align: center;
+}
 </style>
+
